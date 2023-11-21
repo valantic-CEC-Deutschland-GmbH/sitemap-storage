@@ -23,13 +23,13 @@
     "prefer-stable": true,
     "config": {
         "platform": {
-          "php": "7.4"
+            "php": "7.4"
         },
         "preferred-install": "dist",
         "use-include-path": true,
         "sort-packages": true,
         "github-protocols": [
-          "https"
+            "https"
         ],
         "process-timeout": 900,
         "chromium-revision": 814168,
@@ -61,10 +61,16 @@
         "spryker/testify": "*"
     },
     "scripts": {
-      "cs-fix": "phpcbf --standard=phpcs.xml src",
-      "cs-check": "phpcs -s --standard=phpcs.xml --report=full src",
-      "md-check": "phpmd src/ text phpmd-ruleset.xml --minimumpriority 2",
-      "stan": "php -d memory_limit=3072M vendor/bin/phpstan analyze -l 4 src/ValanticSpryker/",
-      "test": "codecept run --env standalone --coverage-text --no-colors --coverage-html"
+        "cs-fix": "phpcbf --standard=phpcs.xml src",
+        "cs-check": "phpcs -s --standard=phpcs.xml --report=full src",
+        "md-check": "phpmd src/ text phpmd-ruleset.xml --minimumpriority 2",
+        "stan": "php -d memory_limit=3072M vendor/bin/phpstan analyze -l 4 src/ValanticSpryker/",
+        "test": "codecept run --env standalone --coverage-text --no-colors --coverage-html"
+    },
+    "repositories": {
+        "gitlab.nxs360.com/461": {
+            "type": "composer",
+            "url": "https://gitlab.nxs360.com/api/v4/group/461/-/packages/composer/packages.json"
+        }
     }
 }
