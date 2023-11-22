@@ -4,8 +4,8 @@ declare(strict_types = 1);
 
 namespace ValanticSpryker\Zed\SitemapStorage\Persistence;
 
-use Orm\Zed\Sitemap\Persistence\Base\PyzSitemapQuery;
-use Orm\Zed\SitemapStorage\Persistence\Base\PyzSitemapStorageQuery;
+use Orm\Zed\Sitemap\Persistence\PyzSitemapQuery;
+use Orm\Zed\SitemapStorage\Persistence\PyzSitemapStorageQuery;
 use Spryker\Zed\Kernel\Persistence\AbstractPersistenceFactory;
 
 /**
@@ -14,7 +14,7 @@ use Spryker\Zed\Kernel\Persistence\AbstractPersistenceFactory;
 class SitemapStoragePersistenceFactory extends AbstractPersistenceFactory
 {
     /**
-     * @return \Orm\Zed\SitemapStorage\Persistence\Base\PyzSitemapStorageQuery
+     * @return \Orm\Zed\SitemapStorage\Persistence\PyzSitemapStorageQuery
      */
     public function createPyzSitemapStorageQuery(): PyzSitemapStorageQuery
     {
@@ -22,7 +22,7 @@ class SitemapStoragePersistenceFactory extends AbstractPersistenceFactory
     }
 
     /**
-     * @return \Orm\Zed\Sitemap\Persistence\Base\PyzSitemapQuery
+     * @return \Orm\Zed\Sitemap\Persistence\PyzSitemapQuery
      */
     public function createPyzSitemapQuery(): PyzSitemapQuery
     {

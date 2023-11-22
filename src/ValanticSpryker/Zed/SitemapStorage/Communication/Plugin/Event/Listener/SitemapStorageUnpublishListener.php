@@ -9,6 +9,7 @@ use Spryker\Zed\Kernel\Communication\AbstractPlugin;
 
 /**
  * @method \ValanticSpryker\Zed\SitemapStorage\Business\SitemapStorageFacadeInterface getFacade()
+ * @method \ValanticSpryker\Zed\SitemapStorage\Communication\SitemapStorageCommunicationFactory getFactory()
  */
 class SitemapStorageUnpublishListener extends AbstractPlugin implements EventBulkHandlerInterface
 {
