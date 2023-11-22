@@ -4,6 +4,7 @@ declare(strict_types = 1);
 
 namespace ValanticSpryker\Zed\SitemapStorage\Persistence;
 
+use Orm\Zed\SitemapStorage\Persistence\Map\PyzSitemapStorageTableMap;
 use Spryker\Zed\Kernel\Persistence\AbstractRepository;
 
 /**
@@ -32,6 +33,6 @@ class SitemapStorageRepository extends AbstractRepository implements SitemapStor
             ->createPyzSitemapStorageQuery()
             ->filterByFkPyzSitemap_In($entitiesIds)
             ->find()
-            ->getData();
+            ->toKeyIndex(PyzSitemapStorageTableMap::getTableMap()->getColumn(PyzSitemapStorageTableMap::COL_FK_PYZ_SITEMAP)->getPhpName());
     }
 }
