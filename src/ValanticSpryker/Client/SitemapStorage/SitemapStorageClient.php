@@ -7,12 +7,11 @@ namespace ValanticSpryker\Client\SitemapStorage;
 use Generated\Shared\Transfer\SitemapRequestTransfer;
 use Generated\Shared\Transfer\SitemapResponseTransfer;
 use Spryker\Client\Kernel\AbstractClient;
-use ValanticSpryker\Client\Sitemap\SitemapClientInterface;
 
 /**
  * @method \ValanticSpryker\Client\SitemapStorage\SitemapStorageFactory getFactory()
  */
-class SitemapStorageClient extends AbstractClient implements SitemapClientInterface
+class SitemapStorageClient extends AbstractClient implements SitemapStorageClientInterface
 {
     /**
      * @param \Generated\Shared\Transfer\SitemapRequestTransfer $sitemapTransfer
