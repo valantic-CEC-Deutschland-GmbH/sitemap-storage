@@ -10,6 +10,10 @@ use Generated\Shared\Transfer\SitemapResponseTransfer;
 interface SitemapStorageClientInterface
 {
     /**
+     * Retrieves sitemap from storage
+     *
+     * @api
+     *
      * @param \Generated\Shared\Transfer\SitemapRequestTransfer $sitemapTransfer
      *
      * @return \Generated\Shared\Transfer\SitemapResponseTransfer
