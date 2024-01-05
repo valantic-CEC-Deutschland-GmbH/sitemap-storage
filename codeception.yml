@@ -1,8 +1,14 @@
 namespace: ValanticSprykerTest
 
-suites:
-  unit:
-    path: .
+include:
+    - tests/ValanticSprykerTest/*
+exclude:
+    - src/ValanticSpryker/*Factory.php
+    - src/ValanticSpryker/*DependencyProvider.php
+    - src/ValanticSpryker/*Config.php
+    - src/ValanticSpryker/*Stub.php
+    - src/ValanticSpryker/*Repository.php
+    - src/ValanticSpryker/*EntityManager.php
 
 settings:
   shuffle: true
@@ -18,23 +24,36 @@ paths:
 
 coverage:
   enabled: true
-  include:
-    - src/ValanticSpryker/*.php
+  show_uncovered: true
+  whitelist:
+      include:
+          - src/ValanticSpryker/*.php
+      exclude:
+          - src/ValanticSpryker/*Factory.php
+          - src/ValanticSpryker/*DependencyProvider.php
+          - src/ValanticSpryker/*Config.php
+          - src/ValanticSpryker/*Stub.php
+          - src/ValanticSpryker/*Repository.php
+          - src/ValanticSpryker/*EntityManager.php
 
 modules:
   enabled:
     - \FondOfCodeception\Module\Spryker
   config:
-    \FondOfCodeception\Module\Spryker:
-      generate_transfer: false
-      generate_map_classes: false
-      generate_propel_classes: false
-
-env:
-  standalone:
-    modules:
-      config:
-        \FondOfCodeception\Module\Spryker:
+      \FondOfCodeception\Module\Spryker:
           generate_transfer: true
           generate_map_classes: true
           generate_propel_classes: true
+          generate_ide_auto_completion: true
+
+env:
+    standalone:
+        modules:
+            enabled:
+                - \FondOfCodeception\Module\Spryker
+            config:
+                \FondOfCodeception\Module\Spryker:
+                    generate_transfer: true
+                    generate_map_classes: true
+                    generate_propel_classes: true
+                    generate_ide_auto_completion: true

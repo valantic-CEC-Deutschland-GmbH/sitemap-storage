@@ -36,7 +36,7 @@ class SitemapStorageDependencyProvider extends AbstractDependencyProvider
      *
      * @return void
      */
-    private function addStorageClient(Container $container): void
+    protected function addStorageClient(Container $container): void
     {
         $container->set(self::CLIENT_STORAGE, function (Container $container): StorageClientInterface {
             return $container->getLocator()->storage()->client();
@@ -48,7 +48,7 @@ class SitemapStorageDependencyProvider extends AbstractDependencyProvider
      *
      * @return void
      */
-    private function addStoreClient(Container $container): void
+    protected function addStoreClient(Container $container): void
     {
         $container->set(self::CLIENT_STORE, function (Container $container): StoreClientInterface {
             return $container->getLocator()->store()->client();
@@ -60,7 +60,7 @@ class SitemapStorageDependencyProvider extends AbstractDependencyProvider
      *
      * @return void
      */
-    private function addSynchronizationService(Container $container): void
+    protected function addSynchronizationService(Container $container): void
     {
         $container->set(self::SERVICE_SYNCHRONIZATION, function (Container $container): SynchronizationServiceInterface {
             return $container->getLocator()->synchronization()->service();

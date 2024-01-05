@@ -12,7 +12,6 @@
             <behavior name="synchronization">
                 <parameter name="resource" value="sitemap"/>
                 <parameter name="key_suffix_column" value="name"/>
-                <parameter name="store" required="true"/>
                 <parameter name="queue_group" value="sync.storage.sitemap"/>
             </behavior>
             <behavior name="timestampable"/>

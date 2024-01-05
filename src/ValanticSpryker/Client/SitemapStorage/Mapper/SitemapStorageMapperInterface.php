@@ -11,9 +11,8 @@ interface SitemapStorageMapperInterface
     /**
      * @param array<string> $storageData
      * @param string $sitemapName
-     * @param string $storeName
      *
      * @return \Generated\Shared\Transfer\SitemapFileTransfer
      */
-    public function mapStorageDataToSitemapFileTransfer(array $storageData, string $sitemapName, string $storeName): SitemapFileTransfer;
+    public function mapStorageDataToSitemapFileTransfer(array $storageData, string $sitemapName): SitemapFileTransfer;
 }

@@ -12,16 +12,14 @@ class SitemapStorageMapper implements SitemapStorageMapperInterface
     /**
      * @param array<string> $storageData
      * @param string $sitemapName
-     * @param string $storeName
      *
      * @return \Generated\Shared\Transfer\SitemapFileTransfer
      */
-    public function mapStorageDataToSitemapFileTransfer(array $storageData, string $sitemapName, string $storeName): SitemapFileTransfer
+    public function mapStorageDataToSitemapFileTransfer(array $storageData, string $sitemapName): SitemapFileTransfer
     {
         $data = $storageData[SitemapStorageConstants::SITEMAP_REDIS_CONTENT_KEY];
 
         $sitemapFileTransfer = new SitemapFileTransfer();
-        $sitemapFileTransfer->setStoreName($storeName);
         $sitemapFileTransfer->setContent($data);
         $sitemapFileTransfer->setName($sitemapName);
 

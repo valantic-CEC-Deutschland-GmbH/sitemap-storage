@@ -35,7 +35,7 @@ class SitemapStorageEventSubscriber extends AbstractPlugin implements EventSubsc
      *
      * @return void
      */
-    private function addSitemapCreateStorageListener(EventCollectionInterface $eventCollection): void
+    protected function addSitemapCreateStorageListener(EventCollectionInterface $eventCollection): void
     {
         $eventCollection->addListenerQueued(
             SitemapEvents::ENTITY_PYZ_SITEMAP_CREATE,
@@ -51,7 +51,7 @@ class SitemapStorageEventSubscriber extends AbstractPlugin implements EventSubsc
      *
      * @return void
      */
-    private function addSitemapUpdateListener(EventCollectionInterface $eventCollection): void
+    protected function addSitemapUpdateListener(EventCollectionInterface $eventCollection): void
     {
         $eventCollection->addListenerQueued(
             SitemapEvents::ENTITY_PYZ_SITEMAP_UPDATE,
@@ -67,7 +67,7 @@ class SitemapStorageEventSubscriber extends AbstractPlugin implements EventSubsc
      *
      * @return void
      */
-    private function addSitemapUnpublishListener(EventCollectionInterface $eventCollection): void
+    protected function addSitemapUnpublishListener(EventCollectionInterface $eventCollection): void
     {
         $eventCollection->addListenerQueued(
             SitemapEvents::ENTITY_PYZ_SITEMAP_DELETE,

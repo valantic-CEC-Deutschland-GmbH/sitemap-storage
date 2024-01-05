@@ -30,14 +30,11 @@ class SitemapStorageFacadeTest extends Unit
     public function testPublish(): void
     {
         // ARRANGE
-        $storeFacade = $this->tester->getLocator()->store()->facade();
-        $currentStoreName = $storeFacade->getCurrentStore()->getName();
         $sitemapStorageFacade = $this->tester->getLocator()->sitemapStorage()->facade();
 
         $sitemap = new PyzSitemap();
         $sitemap->setName('test-name');
         $sitemap->setContent('test-xml');
-        $sitemap->setStoreName($currentStoreName);
         $sitemap->setYvesBaseUrl('test-base-url');
         $sitemap->save();
         $idSitemap = $sitemap->getIdSitemap();
@@ -56,14 +53,11 @@ class SitemapStorageFacadeTest extends Unit
     {
         Propel::disableInstancePooling();
         // ARRANGE
-        $storeFacade = $this->tester->getLocator()->store()->facade();
-        $currentStoreName = $storeFacade->getCurrentStore()->getName();
         $sitemapStorageFacade = $this->tester->getLocator()->sitemapStorage()->facade();
 
         $sitemap = new PyzSitemap();
         $sitemap->setName('test-name');
         $sitemap->setContent('test-xml');
-        $sitemap->setStoreName($currentStoreName);
         $sitemap->setYvesBaseUrl('test-base-url');
         $sitemap->save();
         $idSitemap = $sitemap->getIdSitemap();
@@ -87,14 +81,11 @@ class SitemapStorageFacadeTest extends Unit
     public function testUnpublish(): void
     {
         // ARRANGE
-        $storeFacade = $this->tester->getLocator()->store()->facade();
-        $currentStoreName = $storeFacade->getCurrentStore()->getName();
         $sitemapStorageFacade = $this->tester->getLocator()->sitemapStorage()->facade();
 
         $sitemap = new PyzSitemap();
         $sitemap->setName('test-name');
         $sitemap->setContent('test-xml');
-        $sitemap->setStoreName($currentStoreName);
         $sitemap->setYvesBaseUrl('test-base-url');
         $sitemap->save();
         $idSitemap = $sitemap->getIdSitemap();

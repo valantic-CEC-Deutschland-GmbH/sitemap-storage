@@ -10,7 +10,7 @@ use Spryker\Client\Kernel\AbstractPlugin;
 use ValanticSpryker\Shared\Sitemap\Dependency\Plugin\SitemapResolverPluginInterface;
 
 /**
- * @method \ValanticSpryker\Client\SitemapStorage\SitemapStorageClientInterface getClient()
+ * @method \ValanticSpryker\Client\Sitemap\SitemapClientInterface getClient()
  */
 class SitemapRedisResolverPlugin extends AbstractPlugin implements SitemapResolverPluginInterface
 {

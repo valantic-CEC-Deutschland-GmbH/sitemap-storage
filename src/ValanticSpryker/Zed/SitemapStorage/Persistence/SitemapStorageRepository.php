@@ -29,7 +29,7 @@ class SitemapStorageRepository extends AbstractRepository implements SitemapStor
      */
     public function findSitemapStorageBySitemapIds(array $entitiesIds): array
     {
-        return $this->getFactory()
+        return $this->getFactory() /** @phpstan-ignore-line */
             ->createPyzSitemapStorageQuery()
             ->filterByFkPyzSitemap_In($entitiesIds)
             ->find()

@@ -6,7 +6,6 @@ namespace ValanticSpryker\Client\SitemapStorage;
 
 use Spryker\Client\Kernel\AbstractFactory;
 use Spryker\Client\Storage\StorageClientInterface;
-use Spryker\Client\Store\StoreClientInterface;
 use Spryker\Service\Synchronization\SynchronizationServiceInterface;
 use ValanticSpryker\Client\SitemapStorage\Mapper\SitemapStorageMapper;
 use ValanticSpryker\Client\SitemapStorage\Mapper\SitemapStorageMapperInterface;
@@ -22,7 +21,6 @@ class SitemapStorageFactory extends AbstractFactory
     {
         return new SitemapMatcher(
             $this->getStorageClient(),
-            $this->getStoreClient(),
             $this->getSynchronizationService(),
             $this->createSitemapStorageMapper(),
         );
@@ -34,14 +32,6 @@ class SitemapStorageFactory extends AbstractFactory
     public function getStorageClient(): StorageClientInterface
     {
         return $this->getProvidedDependency(SitemapStorageDependencyProvider::CLIENT_STORAGE);
-    }
-
-    /**
-     * @return \Spryker\Client\Store\StoreClientInterface
-     */
-    public function getStoreClient(): StoreClientInterface
-    {
-        return $this->getProvidedDependency(SitemapStorageDependencyProvider::CLIENT_STORE);
     }
 
     /**
