@@ -11,6 +11,7 @@ use ValanticSpryker\Client\Sitemap\SitemapClientInterface;
 
 /**
  * @method \ValanticSpryker\Client\SitemapStorage\SitemapStorageFactory getFactory()
+ * @SuppressWarnings(PHPMD) // phpcs:ignore
  */
 class SitemapStorageClient extends AbstractClient implements SitemapClientInterface
 {
