@@ -4,6 +4,8 @@
 
 Adds functionality to publish and retrieve sitemap data from storage (Redis). The data is stored in DB and synced to Redis for faster retrieval.
 
+> :warning: This package does not support Spryker setups that have different Redis instances for different stores
+
 
 # Installation
 
