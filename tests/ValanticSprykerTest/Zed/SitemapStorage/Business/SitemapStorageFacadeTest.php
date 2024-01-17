@@ -5,8 +5,8 @@ declare(strict_types = 1);
 namespace ValanticSprykerTest\Zed\SitemapStorage\Business;
 
 use Codeception\Test\Unit;
-use Orm\Zed\Sitemap\Persistence\PyzSitemap;
-use Orm\Zed\SitemapStorage\Persistence\PyzSitemapStorageQuery;
+use Orm\Zed\Sitemap\Persistence\ValSitemap;
+use Orm\Zed\SitemapStorage\Persistence\ValSitemapStorageQuery;
 use Propel\Runtime\Propel;
 use ValanticSprykerTest\Zed\SitemapStorage\SitemapStorageBusinessTester;
 
@@ -32,7 +32,7 @@ class SitemapStorageFacadeTest extends Unit
         // ARRANGE
         $sitemapStorageFacade = $this->tester->getLocator()->sitemapStorage()->facade();
 
-        $sitemap = new PyzSitemap();
+        $sitemap = new ValSitemap();
         $sitemap->setName('test-name');
         $sitemap->setContent('test-xml');
         $sitemap->setYvesBaseUrl('test-base-url');
@@ -43,7 +43,7 @@ class SitemapStorageFacadeTest extends Unit
         $sitemapStorageFacade->publishSitemap([$idSitemap]);
 
         // ASSERT
-        self::assertNotNull(PyzSitemapStorageQuery::create()->findOneByFkPyzSitemap($idSitemap));
+        self::assertNotNull(ValSitemapStorageQuery::create()->findOneByFkValSitemap($idSitemap));
     }
 
     /**
@@ -55,7 +55,7 @@ class SitemapStorageFacadeTest extends Unit
         // ARRANGE
         $sitemapStorageFacade = $this->tester->getLocator()->sitemapStorage()->facade();
 
-        $sitemap = new PyzSitemap();
+        $sitemap = new ValSitemap();
         $sitemap->setName('test-name');
         $sitemap->setContent('test-xml');
         $sitemap->setYvesBaseUrl('test-base-url');
@@ -69,9 +69,9 @@ class SitemapStorageFacadeTest extends Unit
         $sitemapStorageFacade->publishSitemap([$idSitemap]);
 
         // ASSERT
-        $pyzSitemapStorage = PyzSitemapStorageQuery::create()->findOneByFkPyzSitemap($idSitemap);
-        self::assertNotNull($pyzSitemapStorage);
-        self::assertSame('test-name-updated', $pyzSitemapStorage->getName());
+        $valSitemapStorage = ValSitemapStorageQuery::create()->findOneByFkValSitemap($idSitemap);
+        self::assertNotNull($valSitemapStorage);
+        self::assertSame('test-name-updated', $valSitemapStorage->getName());
         Propel::enableInstancePooling();
     }
 
@@ -83,7 +83,7 @@ class SitemapStorageFacadeTest extends Unit
         // ARRANGE
         $sitemapStorageFacade = $this->tester->getLocator()->sitemapStorage()->facade();
 
-        $sitemap = new PyzSitemap();
+        $sitemap = new ValSitemap();
         $sitemap->setName('test-name');
         $sitemap->setContent('test-xml');
         $sitemap->setYvesBaseUrl('test-base-url');
@@ -94,6 +94,6 @@ class SitemapStorageFacadeTest extends Unit
         $sitemapStorageFacade->unpublishSitemap([$idSitemap]);
 
         // ASSERT
-        self::assertNull(PyzSitemapStorageQuery::create()->findOneByFkPyzSitemap($idSitemap));
+        self::assertNull(ValSitemapStorageQuery::create()->findOneByFkValSitemap($idSitemap));
     }
 }

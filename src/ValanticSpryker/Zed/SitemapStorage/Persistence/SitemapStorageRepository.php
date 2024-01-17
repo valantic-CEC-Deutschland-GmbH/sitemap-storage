@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace ValanticSpryker\Zed\SitemapStorage\Persistence;
 
-use Orm\Zed\SitemapStorage\Persistence\Map\PyzSitemapStorageTableMap;
+use Orm\Zed\SitemapStorage\Persistence\Map\ValSitemapStorageTableMap;
 use Spryker\Zed\Kernel\Persistence\AbstractRepository;
 
 /**
@@ -18,7 +18,7 @@ class SitemapStorageRepository extends AbstractRepository implements SitemapStor
     public function findSitemapByIds(array $sitemapIds): array
     {
         return $this->getFactory()
-            ->createPyzSitemapQuery()
+            ->createValSitemapQuery()
             ->filterByIdSitemap_In($sitemapIds)
             ->find()
             ->getData();
@@ -30,9 +30,9 @@ class SitemapStorageRepository extends AbstractRepository implements SitemapStor
     public function findSitemapStorageBySitemapIds(array $entitiesIds): array
     {
         return $this->getFactory() /** @phpstan-ignore-line */
-            ->createPyzSitemapStorageQuery()
-            ->filterByFkPyzSitemap_In($entitiesIds)
+            ->createValSitemapStorageQuery()
+            ->filterByFkValSitemap_In($entitiesIds)
             ->find()
-            ->toKeyIndex(PyzSitemapStorageTableMap::getTableMap()->getColumn(PyzSitemapStorageTableMap::COL_FK_PYZ_SITEMAP)->getPhpName());
+            ->toKeyIndex(ValSitemapStorageTableMap::getTableMap()->getColumn(ValSitemapStorageTableMap::COL_FK_VAL_SITEMAP)->getPhpName());
     }
 }

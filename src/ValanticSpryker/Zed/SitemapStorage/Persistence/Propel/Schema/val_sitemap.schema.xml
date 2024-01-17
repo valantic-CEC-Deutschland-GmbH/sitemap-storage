@@ -5,9 +5,9 @@
           namespace="Orm\Zed\Sitemap\Persistence"
           package="src.Orm.Zed.Sitemap.Persistence">
 
-    <table name="pyz_sitemap">
+    <table name="val_sitemap">
         <behavior name="event">
-            <parameter name="pyz_sitemap_all" column="*"/>
+            <parameter name="val_sitemap_all" column="*"/>
         </behavior>
     </table>
 </database>
