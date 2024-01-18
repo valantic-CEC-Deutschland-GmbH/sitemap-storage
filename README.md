@@ -13,7 +13,7 @@ Adds functionality to publish and retrieve sitemap data from storage (Redis). Th
 2. Since this module is under `ValanticSpryker` namespace, make sure that in `config_default`:
     1. `$config[KernelConstants::CORE_NAMESPACES]` has the namespace
     2. `$config[KernelConstants::PROJECT_NAMESPACES]` has the namespace
-3. Run `console propel:install` to install the `pyz_sitemap_storage` table.
+3. Run `console propel:install` to install the `val_sitemap_storage` table.
 
 ## 4. Add relevant queues to `QueueDependencyProvider`:
 

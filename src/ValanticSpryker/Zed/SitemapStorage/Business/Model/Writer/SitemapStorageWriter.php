@@ -4,8 +4,8 @@ declare(strict_types = 1);
 
 namespace ValanticSpryker\Zed\SitemapStorage\Business\Model\Writer;
 
-use Orm\Zed\Sitemap\Persistence\Base\PyzSitemap;
-use Orm\Zed\SitemapStorage\Persistence\PyzSitemapStorage;
+use Orm\Zed\Sitemap\Persistence\Base\ValSitemap;
+use Orm\Zed\SitemapStorage\Persistence\ValSitemapStorage;
 use ValanticSpryker\Shared\SitemapStorage\SitemapStorageConstants;
 use ValanticSpryker\Zed\SitemapStorage\Persistence\SitemapStorageRepositoryInterface;
 
@@ -49,41 +49,41 @@ class SitemapStorageWriter implements SitemapStorageWriterInterface
     }
 
     /**
-     * @param array<\Orm\Zed\Sitemap\Persistence\PyzSitemap> $sitemapEntities
+     * @param array<\Orm\Zed\Sitemap\Persistence\ValSitemap> $sitemapEntities
      *
      * @return array<int>
      */
     protected function retrieveExistingSitemapIds(array $sitemapEntities): array
     {
-        return array_map(static function (PyzSitemap $sitemap) {
+        return array_map(static function (ValSitemap $sitemap) {
             return $sitemap->getIdSitemap();
         }, $sitemapEntities);
     }
 
     /**
-     * @param array<\Orm\Zed\Sitemap\Persistence\PyzSitemap> $sitemapEntities
-     * @param array<\Orm\Zed\SitemapStorage\Persistence\PyzSitemapStorage> $sitemapStorageEntities
+     * @param array<\Orm\Zed\Sitemap\Persistence\ValSitemap> $sitemapEntities
+     * @param array<\Orm\Zed\SitemapStorage\Persistence\ValSitemapStorage> $sitemapStorageEntities
      *
      * @return void
      */
     protected function storeData(array $sitemapEntities, array $sitemapStorageEntities): void
     {
         foreach ($sitemapEntities as $sitemapEntity) {
-            $sitemapStorageEntity = $sitemapStorageEntities[$sitemapEntity->getIdSitemap()] ?? new PyzSitemapStorage();
+            $sitemapStorageEntity = $sitemapStorageEntities[$sitemapEntity->getIdSitemap()] ?? new ValSitemapStorage();
 
             $this->storeDataSet($sitemapEntity, $sitemapStorageEntity);
         }
     }
 
     /**
-     * @param \Orm\Zed\Sitemap\Persistence\Base\PyzSitemap $sitemapEntity
-     * @param \Orm\Zed\SitemapStorage\Persistence\PyzSitemapStorage $sitemapStorageEntity
+     * @param \Orm\Zed\Sitemap\Persistence\Base\ValSitemap $sitemapEntity
+     * @param \Orm\Zed\SitemapStorage\Persistence\ValSitemapStorage $sitemapStorageEntity
      *
      * @return void
      */
-    protected function storeDataSet(PyzSitemap $sitemapEntity, PyzSitemapStorage $sitemapStorageEntity): void
+    protected function storeDataSet(ValSitemap $sitemapEntity, ValSitemapStorage $sitemapStorageEntity): void
     {
-        $sitemapStorageEntity->setFkPyzSitemap($sitemapEntity->getIdSitemap());
+        $sitemapStorageEntity->setFkValSitemap($sitemapEntity->getIdSitemap());
         $sitemapStorageEntity->setName($sitemapEntity->getName());
         $sitemapStorageEntity->setData(
             [

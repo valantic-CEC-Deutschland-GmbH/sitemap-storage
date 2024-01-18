@@ -4,8 +4,8 @@ declare(strict_types = 1);
 
 namespace ValanticSpryker\Zed\SitemapStorage\Persistence;
 
-use Orm\Zed\Sitemap\Persistence\PyzSitemapQuery;
-use Orm\Zed\SitemapStorage\Persistence\PyzSitemapStorageQuery;
+use Orm\Zed\Sitemap\Persistence\ValSitemapQuery;
+use Orm\Zed\SitemapStorage\Persistence\ValSitemapStorageQuery;
 use Spryker\Zed\Kernel\Persistence\AbstractPersistenceFactory;
 
 /**
@@ -14,18 +14,18 @@ use Spryker\Zed\Kernel\Persistence\AbstractPersistenceFactory;
 class SitemapStoragePersistenceFactory extends AbstractPersistenceFactory
 {
     /**
-     * @return \Orm\Zed\SitemapStorage\Persistence\PyzSitemapStorageQuery
+     * @return \Orm\Zed\SitemapStorage\Persistence\ValSitemapStorageQuery
      */
-    public function createPyzSitemapStorageQuery(): PyzSitemapStorageQuery
+    public function createValSitemapStorageQuery(): ValSitemapStorageQuery
     {
-        return PyzSitemapStorageQuery::create();
+        return ValSitemapStorageQuery::create();
     }
 
     /**
-     * @return \Orm\Zed\Sitemap\Persistence\PyzSitemapQuery
+     * @return \Orm\Zed\Sitemap\Persistence\ValSitemapQuery
      */
-    public function createPyzSitemapQuery(): PyzSitemapQuery
+    public function createValSitemapQuery(): ValSitemapQuery
     {
-        return PyzSitemapQuery::create();
+        return ValSitemapQuery::create();
     }
 }

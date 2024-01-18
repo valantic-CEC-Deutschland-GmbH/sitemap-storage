@@ -4,9 +4,9 @@
           xsi:noNamespaceSchemaLocation="http://static.spryker.com/schema-01.xsd"
           namespace="Orm\Zed\SitemapStorage\Persistence" package="src.Orm.Zed.SitemapStorage.Persistence">
 
-    <table name="pyz_sitemap_storage" identifierQuoting="true">
-            <column name="id_pyz_sitemap_storage" type="INTEGER" autoIncrement="true" primaryKey="true"/>
-            <column name="fk_pyz_sitemap" type="INTEGER" />
+    <table name="val_sitemap_storage" identifierQuoting="true">
+            <column name="id_val_sitemap_storage" type="INTEGER" autoIncrement="true" primaryKey="true"/>
+            <column name="fk_val_sitemap" type="INTEGER" />
             <column name="name" type="VARCHAR" required="true"/>
 
             <behavior name="synchronization">
